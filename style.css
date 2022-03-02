@@ -1,0 +1,247 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-1: #b8b9be;
+    --color-2: #f1f1f1;
+    --color-3: #22222255;
+    --color-4: #00000033;
+    --color-5: #ff5596;
+    --color-6: #ff9900;
+}
+
+body {
+    height: 100vh;
+    background: #E6E7EE;
+    display: grid;
+    place-content: center;
+    font-family: Poppins;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 410px;
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 2px 5px #b8b9be, -2px -2px 5px #FFF;
+    background-color: #E6E7EE;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    overflow: hidden;
+    border-radius: 0px 0px 30px 0px;
+    z-index: 2;
+}
+
+.img, .info {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.4s;
+}
+
+.img {
+    top: 7px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    box-shadow: 0px 2px 3px #999;
+}
+
+.img img {
+    height: 100%;
+    width: 156px;
+}
+
+.info {
+    text-align: center;
+    width: 286px;
+    top: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #555;
+}
+
+.info h2 {
+    color: #000047;
+}
+
+.info h4 {
+    color: #ff5596;
+    margin-bottom: 5px;
+}
+
+.txt {
+    padding: 7px;
+    margin-bottom: 5px;
+}
+
+.skills {
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+}
+
+i, button {
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+    display: grid !important;
+    place-content: center;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+}
+
+.skills i {
+    background: #EEE;
+    border: 1px solid #FFF;
+}
+
+button {
+    position: absolute;
+    left: 100%;
+    top: 92%;
+    transform: translate(-110%, -110%);
+    z-index: 9;
+}
+
+.icons {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    background-color: #FFF;
+    border-radius: 50%;
+    transition: 0.5s;
+    transition-delay: 1s;
+    z-index: 1;
+}
+
+.icons::before, .icons::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    border: 2px solid red;
+}
+
+.icons::after {
+    width: 80%;
+    height: 80%;
+    border-color: #ff9900;
+}
+
+.icons i {
+    position: absolute;
+    width: 16.68%;
+    height: 16.68%;
+}
+
+.icons i:nth-child(1) {
+    left: 91.66667%;
+    top: 41.666664%;
+}
+.icons i:nth-child(2) {
+    left: 77%;
+    top: 77%;
+}
+.icons i:nth-child(3) {
+    left: 41.666664%;
+    top: 91.66667%;
+}
+.icons i:nth-child(4) {
+    left: 6.333333%;
+    top: 77%;
+}
+.icons i:nth-child(5) {
+    left: -8.333334%;
+    top: 41.666664%;
+}
+.icons i:nth-child(6) {
+    left: 6.333333%;
+    top: 6.333333%;
+}
+.icons i:nth-child(7) {
+    left: 41.666664%;
+    top: -8.333334%;
+}
+.icons i:nth-child(8) {
+    left: 77%;
+    top: 6.333333%;
+}
+
+.icons i, button {
+    cursor: pointer;
+    border: 2px solid #f1f1f1;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 5px #FFF;
+    color: #999;
+    text-shadow: 1px 1px 1px #222, -1px -1px 1px #FFF;
+    transition: 0.3s;
+}
+
+.icons i:hover {
+    text-shadow: none;
+    box-shadow: inset -2px -2px 5px #b8b9be,
+                inset 3px 3px 5px #FFF,
+                inset 1px 1px #2225,
+                inset 1px 2px 1px #0003;
+}
+
+button:focus ~ .content {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+}
+
+button:focus ~ .content .img {
+    cursor: pointer;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:focus ~ .content .info {
+    top: 120%;
+}
+
+button:focus ~ .icons {
+    width: 300px;
+    height: 300px;
+}
+
+button:focus {
+    opacity: 0;
+}
+
+button:not(:focus) ~ .content .info,
+button:not(:focus) ~ .content .img {
+        transition-delay: 0.6s;
+}
+
+button:not(:focus) ~ .icons {
+    transition-delay: 0.2s;
+}
+
+button:not(:focus) {
+    transition-delay: 1s;
+
+}
+
